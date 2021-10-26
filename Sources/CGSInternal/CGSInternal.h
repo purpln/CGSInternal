@@ -1,7 +1,6 @@
 #ifndef CGS_INTERNAL_API_H
 #define CGS_INTERNAL_API_H
 
-#include <Carbon/Carbon.h>
 #include <ApplicationServices/ApplicationServices.h>
 
 #include "headers/CGSAccessibility.h"

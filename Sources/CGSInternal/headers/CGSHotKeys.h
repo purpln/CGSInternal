@@ -163,7 +163,7 @@ CG_EXTERN bool CGSIsSymbolicHotKeyEnabled(CGSSymbolicHotKey hotKey);
 CG_EXTERN CGError CGSSetSymbolicHotKeyEnabled(CGSSymbolicHotKey hotKey, bool isEnabled);
 
 /// Returns the values the symbolic hot key represented by the given UID is configured with.
-CG_EXTERN CGError CGSGetSymbolicHotKeyValue(CGSSymbolicHotKey hotKey, unichar *outKeyEquivalent, unichar *outVirtualKeyCode, CGSModifierFlags *outModifiers);
+CG_EXTERN CGError CGSGetSymbolicHotKeyValue(CGSSymbolicHotKey hotKey, u_char *outKeyEquivalent, u_char *outVirtualKeyCode, CGSModifierFlags *outModifiers);
 
 
 #pragma mark - Custom Hot Keys
@@ -173,16 +173,16 @@ CG_EXTERN CGError CGSGetSymbolicHotKeyValue(CGSSymbolicHotKey hotKey, unichar *o
 /// creating a hot key if needed.
 ///
 /// If the given UID is unique and not in use, a hot key will be instantiated for you under it.
-CG_EXTERN void CGSSetHotKey(CGSConnectionID cid, int uid, unichar options, unichar key, CGSModifierFlags modifierFlags);
+CG_EXTERN void CGSSetHotKey(CGSConnectionID cid, int uid, u_char options, u_char key, CGSModifierFlags modifierFlags);
 
 /// Functions like `CGSSetHotKey` but with an exclusion value.
 ///
 /// The exact function of the exclusion value is unknown.  Working theory: It is supposed to be
 /// passed the UID of another existing hot key that it supresses.  Why can only one can be passed, tho?
-CG_EXTERN void CGSSetHotKeyWithExclusion(CGSConnectionID cid, int uid, unichar options, unichar key, CGSModifierFlags modifierFlags, int exclusion);
+CG_EXTERN void CGSSetHotKeyWithExclusion(CGSConnectionID cid, int uid, u_char options, u_char key, CGSModifierFlags modifierFlags, int exclusion);
 
 /// Returns the value of the configured options for the hot key represented by the given UID.
-CG_EXTERN bool CGSGetHotKey(CGSConnectionID cid, int uid, unichar *options, unichar *key, CGSModifierFlags *modifierFlags);
+CG_EXTERN bool CGSGetHotKey(CGSConnectionID cid, int uid, u_char *options, u_char *key, CGSModifierFlags *modifierFlags);
 
 /// Removes a previously created hot key.
 CG_EXTERN void CGSRemoveHotKey(CGSConnectionID cid, int uid);

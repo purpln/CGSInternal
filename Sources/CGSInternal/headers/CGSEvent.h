@@ -180,6 +180,13 @@ typedef enum : unsigned int {
 	kCGXServerDisplayAcceleratorDeactivate = 1804,
 } CGSEventType;
 
+//typedef CFStringRef CFRunLoopMode CF_EXTENSIBLE_STRING_ENUM;
+
+CF_EXPORT const CFRunLoopMode kCFRunLoopDefaultMode;
+CF_EXPORT const CFRunLoopMode kCFRunLoopCommonModes;
+CF_EXPORT const CFRunLoopMode kGSEventReceiveRunLoopMode = CFSTR("GSEventReceiveRunLoopMode");
+
+CF_EXPORT CGEventRef CGEventCreateNextEvent(int64_t);
 
 #pragma mark - System-Level Event Notification Registration
 

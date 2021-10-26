@@ -30,7 +30,7 @@
 #ifndef CGS_SESSION_INTERNAL_H
 #define CGS_SESSION_INTERNAL_H
 
-#include "CGSInternal.h"
+//#include "CGSInternal.h"
 
 typedef int CGSSessionID;
 
